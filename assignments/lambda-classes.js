@@ -23,8 +23,8 @@ grade(student, subject){return student = `receives a perfect score on` + subject
 class Student extends Person{
     constructor(studentProps){
         super(studentProps);
-        this.previousBackground = StudentProps.previousBackground;
-        thisclassName = studentProps.className;
+        this.previousBackground = studentProps.previousBackground;
+        this.className = studentProps.className;
         this.favSubjects = studentProps.favSubjects;
     };
 
@@ -43,7 +43,55 @@ class TL extends Instructor{
         super(TLProps);
         this.gradClassName = TL.gradClassName;
         this.favInstructor = TLProps.favInstructor;
-    }
-    
-}
+    };
+    standup(channel){return`${this.name} announces to ${channel}, @channel standy times!`};
+    debugsCode(student, subject){ return `${this.name} debugs` + student + `'s code on` + subject}
+};
 
+const bmo = new Person({
+    name: "Brian",
+    age: 29,
+    location: "Knoxville, TN"
+
+})
+
+console.log(bmo.speak());
+
+const Pace = new Instructor({
+    name: "Pace",
+    age:"32?",
+    location:"Meza, AZ",
+    specialty: "front-end dev",
+    favLanguage: "JavaScript",
+    catchPhrase:"secure tha bag!",
+
+})
+
+console.log(Pace.catchPhrase);
+console.log(Pace.demo(" constructors"));
+
+const Brian = new Student({
+    name: "Brian",
+    age:29,
+    location:"Knoxville, TN",
+    previousBackground: "Marketing",
+    className:"WEBPT9",
+    favSubjects: ["JS", "CSS", "React"],
+})
+
+Brian.listsSubjects();
+console.log(Brian.sprintChallenge(" Advance CSS"));
+console.log (Brian.PRAssignments(" Responsive Design"));
+
+const Charles = new TL({
+    name: "Charles",
+    age: " around the same age as Brian?",
+    location: "USofA",
+    favLanguage: "React",
+    catchPhrase:"You Know this!",
+    gradClassName: "WEB9?",
+    favInstructor: "Pace, because Pace is the only instructor Brian has had.",
+})
+
+console.log(Charles.debugsCode(" Brian", " flex-box"));
+console.log(Charles.standup("WEBPT9-Charles"));
